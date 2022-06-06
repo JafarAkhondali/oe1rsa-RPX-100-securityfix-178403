@@ -39,3 +39,53 @@ The Austrian Radio Amateur Association (OeVSV) together with the Institute of Te
 <h1>Concept Access Point</h1>
 <img src="doc/img/AccessPoint.png" height="400" alt="Concept Access Point">
 
+---
+
+# Installation Hints
+
+It is very easy to build the software, because it has a low footprint and only
+a few dependencies.
+
+## Getting the Software
+
+In a directory of your choice you clone the software with
+
+    git clone <repository-url-as-pasted-from-github> RPX-100
+
+## Dependencies
+
+- [libwebsockets](https://libwebsockets.org)
+- [lime-suite](https://myriadrf.org/projects/software/lime-suite)
+- [liquiddsp](https://liquidsdr.org)
+
+If you are on Debian or a compatible system such as e.g. Ubuntu you just may
+
+    sudo apt install libwebsockets-dev liblimesuite-dev libliquid-dev
+
+and you are set. If you didn't have already you might as need well:
+
+    sudo apt install build-essential cmake
+
+## Configure, Compile and Install
+
+CMake makes it easy to do an *out-of-tree* build. From the directory one
+level above our checked-out sources we issue the command
+
+    cmake -S RPX-100 -B build-RPX-100
+    cmake --build build-RPX-100 --target all
+    sudo cmake --build build-RPX-100 --target install
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
